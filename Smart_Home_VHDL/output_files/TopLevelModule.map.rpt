@@ -1,0 +1,754 @@
+Analysis & Synthesis report for TopLevelModule
+Tue May 14 00:23:56 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |TopLevelModule|seven_seg_dispayer:inst_seven_seg_dispayer|state
+ 10. State Machine - |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|state
+ 11. State Machine - |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|counter:inst_counter|state
+ 12. State Machine - |TopLevelModule|dht_sensor:sensor|state
+ 13. State Machine - |TopLevelModule|UART_rx:UART_Receiver|SMStateVariable
+ 14. Registers Removed During Synthesis
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Parameter Settings for User Entity Instance: Top-level Entity: |TopLevelModule
+ 19. Parameter Settings for User Entity Instance: UART_tx:UART_Transmitter
+ 20. Parameter Settings for User Entity Instance: UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST
+ 21. Parameter Settings for User Entity Instance: UART_tx:UART_Transmitter|BaudClkGenerator:UART_BIT_TIMING_INST
+ 22. Parameter Settings for User Entity Instance: UART_rx:UART_Receiver
+ 23. Parameter Settings for User Entity Instance: UART_rx:UART_Receiver|Sync:Sync_Rx
+ 24. Parameter Settings for User Entity Instance: UART_rx:UART_Receiver|BaudClkGenerator:BaudClkGenerator_Rx
+ 25. Parameter Settings for User Entity Instance: UART_rx:UART_Receiver|ShiftRegister:ShiftRegister_Rx
+ 26. Parameter Settings for User Entity Instance: pwm:inst_pwm
+ 27. Parameter Settings for User Entity Instance: HCSR04_sensor_interface:inst_HCSR04_sensor_interface|measurement_cal:inst_measurement_cal
+ 28. Port Connectivity Checks: "seven_seg:measured_temp_hex"
+ 29. Port Connectivity Checks: "dht_sensor:sensor"
+ 30. Port Connectivity Checks: "UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++---------------------------------+----------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue May 14 00:23:56 2024              ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Standard Edition ;
+; Revision Name                   ; TopLevelModule                                     ;
+; Top-level Entity Name           ; TopLevelModule                                     ;
+; Family                          ; Cyclone V                                          ;
+; Logic utilization (in ALMs)     ; N/A                                                ;
+; Total registers                 ; 381                                                ;
+; Total pins                      ; 50                                                 ;
+; Total virtual pins              ; 0                                                  ;
+; Total block memory bits         ; 0                                                  ;
+; Total DSP Blocks                ; 4                                                  ;
+; Total HSSI RX PCSs              ; 0                                                  ;
+; Total HSSI PMA RX Deserializers ; 0                                                  ;
+; Total HSSI TX PCSs              ; 0                                                  ;
+; Total HSSI PMA TX Serializers   ; 0                                                  ;
+; Total PLLs                      ; 0                                                  ;
+; Total DLLs                      ; 0                                                  ;
++---------------------------------+----------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; TopLevelModule     ; TopLevelModule     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
+; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; src/UART_tx.vhd                  ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_tx.vhd             ;         ;
+; src/UART_rx.vhd                  ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_rx.vhd             ;         ;
+; src/TopLevelModule.vhd           ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd      ;         ;
+; src/Sync.vhd                     ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/Sync.vhd                ;         ;
+; src/ShiftRegister.vhd            ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/ShiftRegister.vhd       ;         ;
+; src/Serialiser.vhd               ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/Serialiser.vhd          ;         ;
+; src/BaudClkGenerator.vhd         ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/BaudClkGenerator.vhd    ;         ;
+; pwm.vhd                          ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/pwm.vhd                     ;         ;
+; seven_seg.vhd                    ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/seven_seg.vhd               ;         ;
+; dht_sensor.vhd                   ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/dht_sensor.vhd              ;         ;
+; fallingedge_detector.vhd         ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/fallingedge_detector.vhd    ;         ;
+; risingedge_detector.vhd          ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/risingedge_detector.vhd     ;         ;
+; sync_11.vhd                      ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/sync_11.vhd                 ;         ;
+; seven_seg_dispayer.vhd           ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/seven_seg_dispayer.vhd      ;         ;
+; buzzer.vhd                       ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/buzzer.vhd                  ;         ;
+; HCSR04_sensor_interface.vhd      ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/HCSR04_sensor_interface.vhd ;         ;
+; binary_to_bcd.vhd                ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/binary_to_bcd.vhd           ;         ;
+; counter.vhd                      ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/counter.vhd                 ;         ;
+; measurement_cal.vhd              ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/measurement_cal.vhd         ;         ;
+; trigger_generator.vhd            ; yes             ; User VHDL File  ; C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/trigger_generator.vhd       ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 375       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 623       ;
+;     -- 7 input functions                    ; 2         ;
+;     -- 6 input functions                    ; 113       ;
+;     -- 5 input functions                    ; 62        ;
+;     -- 4 input functions                    ; 116       ;
+;     -- <=3 input functions                  ; 330       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 381       ;
+;                                             ;           ;
+; I/O pins                                    ; 50        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 4         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 381       ;
+; Total fan-out                               ; 3778      ;
+; Average fan-out                             ; 3.41      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                         ;
++-----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Entity Name             ; Library Name ;
++-----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; |TopLevelModule                                           ; 623 (52)            ; 381 (44)                  ; 0                 ; 4          ; 50   ; 0            ; |TopLevelModule                                                                                               ; TopLevelModule          ; work         ;
+;    |HCSR04_sensor_interface:inst_HCSR04_sensor_interface| ; 268 (0)             ; 120 (0)                   ; 0                 ; 3          ; 0    ; 0            ; |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface                                          ; HCSR04_sensor_interface ; work         ;
+;       |binary_to_bcd:inst_binary_to_bcd|                  ; 113 (113)           ; 29 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd         ; binary_to_bcd           ; work         ;
+;       |counter:inst_counter|                              ; 51 (51)             ; 52 (52)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|counter:inst_counter                     ; counter                 ; work         ;
+;       |measurement_cal:inst_measurement_cal|              ; 67 (67)             ; 15 (15)                   ; 0                 ; 3          ; 0    ; 0            ; |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|measurement_cal:inst_measurement_cal     ; measurement_cal         ; work         ;
+;       |trigger_generator:inst_trigger_generator|          ; 37 (37)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|trigger_generator:inst_trigger_generator ; trigger_generator       ; work         ;
+;    |UART_rx:UART_Receiver|                                ; 44 (6)              ; 36 (7)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|UART_rx:UART_Receiver                                                                         ; UART_rx                 ; work         ;
+;       |BaudClkGenerator:BaudClkGenerator_Rx|              ; 36 (36)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|UART_rx:UART_Receiver|BaudClkGenerator:BaudClkGenerator_Rx                                    ; BaudClkGenerator        ; work         ;
+;       |ShiftRegister:ShiftRegister_Rx|                    ; 1 (1)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|UART_rx:UART_Receiver|ShiftRegister:ShiftRegister_Rx                                          ; ShiftRegister           ; work         ;
+;       |Sync:Sync_Rx|                                      ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|UART_rx:UART_Receiver|Sync:Sync_Rx                                                            ; Sync                    ; work         ;
+;    |UART_tx:UART_Transmitter|                             ; 33 (0)              ; 28 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|UART_tx:UART_Transmitter                                                                      ; UART_tx                 ; work         ;
+;       |BaudClkGenerator:UART_BIT_TIMING_INST|             ; 23 (23)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|UART_tx:UART_Transmitter|BaudClkGenerator:UART_BIT_TIMING_INST                                ; BaudClkGenerator        ; work         ;
+;       |Serialiser:UART_SERIALISER_INST|                   ; 10 (10)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST                                      ; Serialiser              ; work         ;
+;    |buzzer:inst_buzzer|                                   ; 18 (18)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|buzzer:inst_buzzer                                                                            ; buzzer                  ; work         ;
+;    |dht_sensor:sensor|                                    ; 136 (130)           ; 62 (54)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|dht_sensor:sensor                                                                             ; dht_sensor              ; work         ;
+;       |fallingedge_detector:falling|                      ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|dht_sensor:sensor|fallingedge_detector:falling                                                ; fallingedge_detector    ; work         ;
+;       |risingedge_detector:rising_start|                  ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|dht_sensor:sensor|risingedge_detector:rising_start                                            ; risingedge_detector     ; work         ;
+;       |risingedge_detector:rising|                        ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|dht_sensor:sensor|risingedge_detector:rising                                                  ; risingedge_detector     ; work         ;
+;       |sync_11:do_sync|                                   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|dht_sensor:sensor|sync_11:do_sync                                                             ; sync_11                 ; work         ;
+;    |pwm:inst_pwm|                                         ; 33 (33)             ; 27 (27)                   ; 0                 ; 1          ; 0    ; 0            ; |TopLevelModule|pwm:inst_pwm                                                                                  ; pwm                     ; work         ;
+;    |seven_seg:measured_temp_hex|                          ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|seven_seg:measured_temp_hex                                                                   ; seven_seg               ; work         ;
+;    |seven_seg_dispayer:inst_seven_seg_dispayer|           ; 29 (29)             ; 47 (47)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevelModule|seven_seg_dispayer:inst_seven_seg_dispayer                                                    ; seven_seg_dispayer      ; work         ;
++-----------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Independent 9x9                 ; 1           ;
+; Two Independent 18x18           ; 2           ;
+; Sum of two 18x18                ; 1           ;
+; Total number of DSP blocks      ; 4           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 5           ;
++---------------------------------+-------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------+
+; State Machine - |TopLevelModule|seven_seg_dispayer:inst_seven_seg_dispayer|state      ;
++-------------------------+-------------------------+----------------------+------------+
+; Name                    ; state.display_seven_seg ; state.handle_in_data ; state.idle ;
++-------------------------+-------------------------+----------------------+------------+
+; state.idle              ; 0                       ; 0                    ; 0          ;
+; state.handle_in_data    ; 0                       ; 1                    ; 1          ;
+; state.display_seven_seg ; 1                       ; 0                    ; 1          ;
++-------------------------+-------------------------+----------------------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|state ;
++--------------------+----------------+--------------------+------------------------------------------------------------------+
+; Name               ; state.counting ; state.copying_info ; state.idle                                                       ;
++--------------------+----------------+--------------------+------------------------------------------------------------------+
+; state.idle         ; 0              ; 0                  ; 0                                                                ;
+; state.copying_info ; 0              ; 1                  ; 1                                                                ;
+; state.counting     ; 1              ; 0                  ; 1                                                                ;
++--------------------+----------------+--------------------+------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|counter:inst_counter|state ;
++--------------------+--------------------+----------------+------------------------------------------------------+
+; Name               ; state.sending_info ; state.counting ; state.idle                                           ;
++--------------------+--------------------+----------------+------------------------------------------------------+
+; state.idle         ; 0                  ; 0              ; 0                                                    ;
+; state.counting     ; 0                  ; 1              ; 1                                                    ;
+; state.sending_info ; 1                  ; 0              ; 1                                                    ;
++--------------------+--------------------+----------------+------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------+
+; State Machine - |TopLevelModule|dht_sensor:sensor|state                                   ;
++------------+----------+----------+----------+----------+----------+----------+------------+
+; Name       ; state.S6 ; state.S5 ; state.S4 ; state.S3 ; state.S2 ; state.S1 ; state.IDLE ;
++------------+----------+----------+----------+----------+----------+----------+------------+
+; state.IDLE ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0          ;
+; state.S1   ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1          ;
+; state.S2   ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1          ;
+; state.S3   ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1          ;
+; state.S4   ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1          ;
+; state.S5   ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1          ;
+; state.S6   ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1          ;
++------------+----------+----------+----------+----------+----------+----------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevelModule|UART_rx:UART_Receiver|SMStateVariable                                                       ;
++------------------------------------+----------------------------+------------------------------------+----------------------+
+; Name                               ; SMStateVariable.ASSERT_IRQ ; SMStateVariable.COLLECT_RS232_DATA ; SMStateVariable.IDLE ;
++------------------------------------+----------------------------+------------------------------------+----------------------+
+; SMStateVariable.IDLE               ; 0                          ; 0                                  ; 0                    ;
+; SMStateVariable.COLLECT_RS232_DATA ; 0                          ; 1                                  ; 1                    ;
+; SMStateVariable.ASSERT_IRQ         ; 1                          ; 0                                  ; 1                    ;
++------------------------------------+----------------------------+------------------------------------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                              ;
++------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                        ; Reason for Removal                                                                                                       ;
++------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[3]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[3]  ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[2]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[2]  ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[1]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[1]  ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[7]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[7]  ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[6]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[6]  ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[5]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[5]  ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[4]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[4]  ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[11] ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[11] ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[10] ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[10] ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[9]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[9]  ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[8]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[8]  ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|bcd_signal[0]  ; Merged with HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|\double_dabble:bcd[0]  ;
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[9]                            ; Stuck at VCC due to stuck port data_in                                                                                   ;
+; Total Number of Removed Registers = 13                                                               ;                                                                                                                          ;
++------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 381   ;
+; Number of registers using Synchronous Clear  ; 163   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 358   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 151   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                               ;
++----------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                ; Fan out ;
++----------------------------------------------------------------------------------+---------+
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[0]        ; 2       ;
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[1]        ; 1       ;
+; UART_tx:UART_Transmitter|BaudClkGenerator:UART_BIT_TIMING_INST|Ready             ; 3       ;
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[2]        ; 1       ;
+; dht_sensor:sensor|sync_11:do_sync|Reg[1]                                         ; 9       ;
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[3]        ; 1       ;
+; dht_sensor:sensor|sync_11:do_sync|Reg[0]                                         ; 1       ;
+; UART_rx:UART_Receiver|Sync:Sync_Rx|SR[1]                                         ; 3       ;
+; UART_rx:UART_Receiver|BaudClkGenerator:BaudClkGenerator_Rx|Ready                 ; 4       ;
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[4]        ; 1       ;
+; UART_rx:UART_Receiver|Sync:Sync_Rx|SR[0]                                         ; 1       ;
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[5]        ; 1       ;
+; HCSR04_sensor_interface:inst_HCSR04_sensor_interface|counter:inst_counter|o_DV_n ; 2       ;
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[6]        ; 1       ;
+; UART_rx:UART_Receiver|RS232_Rx_Synced_Delay                                      ; 1       ;
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[7]        ; 1       ;
+; UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[8]        ; 1       ;
+; Total number of inverted registers = 17                                          ;         ;
++----------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopLevelModule|UART_tx:UART_Transmitter|BaudClkGenerator:UART_BIT_TIMING_INST|ClocksLeft[3]        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopLevelModule|UART_tx:UART_Transmitter|BaudClkGenerator:UART_BIT_TIMING_INST|ClocksLeft[2]        ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 0 LEs                ; 26 LEs                 ; Yes        ; |TopLevelModule|UART_tx:UART_Transmitter|BaudClkGenerator:UART_BIT_TIMING_INST|BitPeriodCounter[10] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopLevelModule|SMVariable                                                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopLevelModule|UART_rx:UART_Receiver|BaudClkGenerator:BaudClkGenerator_Rx|ClocksLeft[3]            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopLevelModule|UART_rx:UART_Receiver|BaudClkGenerator:BaudClkGenerator_Rx|ClocksLeft[1]            ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |TopLevelModule|UART_rx:UART_Receiver|BaudClkGenerator:BaudClkGenerator_Rx|BitPeriodCounter[0]      ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 14 LEs               ; 21 LEs                 ; Yes        ; |TopLevelModule|dht_sensor:sensor|bit_count[4]                                                      ;
+; 17:1               ; 25 bits   ; 275 LEs       ; 0 LEs                ; 275 LEs                ; Yes        ; |TopLevelModule|dht_sensor:sensor|count[1]                                                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |TopLevelModule|UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST|ShiftRegister[3]           ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 20 LEs               ; 24 LEs                 ; No         ; |TopLevelModule|dht_sensor:sensor|Selector29                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |TopLevelModule ;
++-----------------+----------+---------------------------------------------------+
+; Parameter Name  ; Value    ; Type                                              ;
++-----------------+----------+---------------------------------------------------+
+; RS232_DATA_BITS ; 8        ; Signed Integer                                    ;
+; SYS_CLK_FREQ    ; 50000000 ; Signed Integer                                    ;
+; BAUD_RATE       ; 9600     ; Signed Integer                                    ;
+; sys_clk         ; 50000000 ; Signed Integer                                    ;
+; pwm_freq        ; 100000   ; Signed Integer                                    ;
+; bits_resolution ; 8        ; Signed Integer                                    ;
+; phases          ; 1        ; Signed Integer                                    ;
++-----------------+----------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_tx:UART_Transmitter ;
++-----------------+----------+------------------------------------------+
+; Parameter Name  ; Value    ; Type                                     ;
++-----------------+----------+------------------------------------------+
+; rs232_data_bits ; 8        ; Signed Integer                           ;
+; sys_clk_freq    ; 50000000 ; Signed Integer                           ;
+; baud_rate       ; 9600     ; Signed Integer                           ;
++-----------------+----------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; data_width     ; 10    ; Signed Integer                                                               ;
+; default_state  ; '1'   ; Enumerated                                                                   ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_tx:UART_Transmitter|BaudClkGenerator:UART_BIT_TIMING_INST ;
++------------------+----------+-------------------------------------------------------------------------------+
+; Parameter Name   ; Value    ; Type                                                                          ;
++------------------+----------+-------------------------------------------------------------------------------+
+; number_of_clocks ; 10       ; Signed Integer                                                                ;
+; sys_clk_freq     ; 50000000 ; Signed Integer                                                                ;
+; baud_rate        ; 9600     ; Signed Integer                                                                ;
+; uart_rx          ; false    ; Enumerated                                                                    ;
++------------------+----------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_rx:UART_Receiver ;
++----------------+----------+----------------------------------------+
+; Parameter Name ; Value    ; Type                                   ;
++----------------+----------+----------------------------------------+
+; data_width     ; 8        ; Signed Integer                         ;
+; sys_clk_freq   ; 50000000 ; Signed Integer                         ;
+; baud_rate      ; 9600     ; Signed Integer                         ;
++----------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_rx:UART_Receiver|Sync:Sync_Rx ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; idle_state     ; '1'   ; Enumerated                                             ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_rx:UART_Receiver|BaudClkGenerator:BaudClkGenerator_Rx ;
++------------------+----------+---------------------------------------------------------------------------+
+; Parameter Name   ; Value    ; Type                                                                      ;
++------------------+----------+---------------------------------------------------------------------------+
+; number_of_clocks ; 9        ; Signed Integer                                                            ;
+; sys_clk_freq     ; 50000000 ; Signed Integer                                                            ;
+; baud_rate        ; 9600     ; Signed Integer                                                            ;
+; uart_rx          ; true     ; Enumerated                                                                ;
++------------------+----------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_rx:UART_Receiver|ShiftRegister:ShiftRegister_Rx ;
++-----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name  ; Value ; Type                                                                    ;
++-----------------+-------+-------------------------------------------------------------------------+
+; chain_length    ; 8     ; Signed Integer                                                          ;
+; shift_direction ; 'R'   ; Enumerated                                                              ;
++-----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pwm:inst_pwm ;
++-----------------+----------+------------------------------+
+; Parameter Name  ; Value    ; Type                         ;
++-----------------+----------+------------------------------+
+; sys_clk         ; 50000000 ; Signed Integer               ;
+; pwm_freq        ; 100000   ; Signed Integer               ;
+; bits_resolution ; 8        ; Signed Integer               ;
+; phases          ; 1        ; Signed Integer               ;
++-----------------+----------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HCSR04_sensor_interface:inst_HCSR04_sensor_interface|measurement_cal:inst_measurement_cal ;
++----------------+--------------------------------+--------------------------------------------------------------------------------------+
+; Parameter Name ; Value                          ; Type                                                                                 ;
++----------------+--------------------------------+--------------------------------------------------------------------------------------+
+; ns_cycel       ; 10100                          ; Unsigned Binary                                                                      ;
+; division_cons  ; 100100001010000110010100100001 ; Unsigned Binary                                                                      ;
++----------------+--------------------------------+--------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "seven_seg:measured_temp_hex" ;
++-------------+-------+----------+------------------------+
+; Port        ; Type  ; Severity ; Details                ;
++-------------+-------+----------+------------------------+
+; input[7..6] ; Input ; Info     ; Stuck at GND           ;
++-------------+-------+----------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dht_sensor:sensor"                                                                            ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_flag      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST" ;
++--------+-------+----------+----------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                  ;
++--------+-------+----------+----------------------------------------------------------+
+; din[9] ; Input ; Info     ; Stuck at VCC                                             ;
+; din[0] ; Input ; Info     ; Stuck at GND                                             ;
++--------+-------+----------+----------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 381                         ;
+;     CLR               ; 98                          ;
+;     CLR SCLR          ; 130                         ;
+;     ENA               ; 21                          ;
+;     ENA CLR           ; 97                          ;
+;     ENA CLR SCLR      ; 33                          ;
+;     plain             ; 2                           ;
+; arriav_io_obuf        ; 1                           ;
+; arriav_lcell_comb     ; 632                         ;
+;     arith             ; 233                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 177                         ;
+;         2 data inputs ; 54                          ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 397                         ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 61                          ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 116                         ;
+;         5 data inputs ; 62                          ;
+;         6 data inputs ; 113                         ;
+; arriav_mac            ; 4                           ;
+; boundary_port         ; 50                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.10                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:01:33     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Standard Edition
+    Info: Processing started: Tue May 14 00:22:14 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TopLevelModule -c TopLevelModule
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file src/uart_tx.vhd
+    Info (12022): Found design unit 1: UART_tx-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_tx.vhd Line: 23
+    Info (12023): Found entity 1: UART_tx File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_tx.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file src/uart_rx.vhd
+    Info (12022): Found design unit 1: UART_rx-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_rx.vhd Line: 23
+    Info (12023): Found entity 1: UART_rx File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_rx.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file src/toplevelmodule.vhd
+    Info (12022): Found design unit 1: TopLevelModule-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 42
+    Info (12023): Found entity 1: TopLevelModule File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file src/sync.vhd
+    Info (12022): Found design unit 1: Sync-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/Sync.vhd Line: 19
+    Info (12023): Found entity 1: Sync File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/Sync.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file src/shiftregister.vhd
+    Info (12022): Found design unit 1: ShiftRegister-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/ShiftRegister.vhd Line: 21
+    Info (12023): Found entity 1: ShiftRegister File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/ShiftRegister.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file src/serialiser.vhd
+    Info (12022): Found design unit 1: Serialiser-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/Serialiser.vhd Line: 22
+    Info (12023): Found entity 1: Serialiser File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/Serialiser.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file src/baudclkgenerator.vhd
+    Info (12022): Found design unit 1: BaudClkGenerator-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/BaudClkGenerator.vhd Line: 23
+    Info (12023): Found entity 1: BaudClkGenerator File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/BaudClkGenerator.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file pwm.vhd
+    Info (12022): Found design unit 1: pwm-logic File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/pwm.vhd Line: 45
+    Info (12023): Found entity 1: pwm File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/pwm.vhd Line: 30
+Info (12021): Found 2 design units, including 1 entities, in source file seven_seg.vhd
+    Info (12022): Found design unit 1: seven_seg-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/seven_seg.vhd Line: 15
+    Info (12023): Found entity 1: seven_seg File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/seven_seg.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file dht_sensor.vhd
+    Info (12022): Found design unit 1: dht_sensor-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/dht_sensor.vhd Line: 17
+    Info (12023): Found entity 1: dht_sensor File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/dht_sensor.vhd Line: 5
+Warning (12019): Can't analyze file -- file sync.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file fallingedge_detector.vhd
+    Info (12022): Found design unit 1: fallingedge_detector-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/fallingedge_detector.vhd Line: 15
+    Info (12023): Found entity 1: fallingedge_detector File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/fallingedge_detector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file risingedge_detector.vhd
+    Info (12022): Found design unit 1: risingedge_detector-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/risingedge_detector.vhd Line: 15
+    Info (12023): Found entity 1: risingedge_detector File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/risingedge_detector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file sync_11.vhd
+    Info (12022): Found design unit 1: sync_11-rtl File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/sync_11.vhd Line: 15
+    Info (12023): Found entity 1: sync_11 File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/sync_11.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file seven_seg_dispayer.vhd
+    Info (12022): Found design unit 1: seven_seg_dispayer-Behavioral File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/seven_seg_dispayer.vhd Line: 28
+    Info (12023): Found entity 1: seven_seg_dispayer File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/seven_seg_dispayer.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file buzzer.vhd
+    Info (12022): Found design unit 1: buzzer-Behavioral File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/buzzer.vhd Line: 16
+    Info (12023): Found entity 1: buzzer File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/buzzer.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file hcsr04_sensor_interface.vhd
+    Info (12022): Found design unit 1: HCSR04_sensor_interface-Behavioral File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/HCSR04_sensor_interface.vhd Line: 41
+    Info (12023): Found entity 1: HCSR04_sensor_interface File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/HCSR04_sensor_interface.vhd Line: 19
+Info (12021): Found 2 design units, including 1 entities, in source file binary_to_bcd.vhd
+    Info (12022): Found design unit 1: binary_to_bcd-Behavioral File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/binary_to_bcd.vhd Line: 40
+    Info (12023): Found entity 1: binary_to_bcd File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/binary_to_bcd.vhd Line: 25
+Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
+    Info (12022): Found design unit 1: counter-Behavioral File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/counter.vhd Line: 52
+    Info (12023): Found entity 1: counter File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/counter.vhd Line: 34
+Info (12021): Found 2 design units, including 1 entities, in source file measurement_cal.vhd
+    Info (12022): Found design unit 1: measurement_cal-Behavioral File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/measurement_cal.vhd Line: 54
+    Info (12023): Found entity 1: measurement_cal File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/measurement_cal.vhd Line: 24
+Info (12021): Found 2 design units, including 1 entities, in source file trigger_generator.vhd
+    Info (12022): Found design unit 1: trigger_generator-Behavioral File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/trigger_generator.vhd Line: 41
+    Info (12023): Found entity 1: trigger_generator File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/trigger_generator.vhd Line: 25
+Info (12127): Elaborating entity "TopLevelModule" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at TopLevelModule.vhd(183): object "dht_interrupt" assigned a value but never read File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at TopLevelModule.vhd(276): signal "Rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 276
+Warning (10492): VHDL Process Statement warning at TopLevelModule.vhd(310): signal "N_reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 310
+Info (12128): Elaborating entity "UART_tx" for hierarchy "UART_tx:UART_Transmitter" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 207
+Info (12128): Elaborating entity "Serialiser" for hierarchy "UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_tx.vhd Line: 70
+Info (12128): Elaborating entity "BaudClkGenerator" for hierarchy "UART_tx:UART_Transmitter|BaudClkGenerator:UART_BIT_TIMING_INST" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_tx.vhd Line: 89
+Info (12128): Elaborating entity "UART_rx" for hierarchy "UART_rx:UART_Receiver" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 210
+Info (12128): Elaborating entity "Sync" for hierarchy "UART_rx:UART_Receiver|Sync:Sync_Rx" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_rx.vhd Line: 87
+Info (12128): Elaborating entity "BaudClkGenerator" for hierarchy "UART_rx:UART_Receiver|BaudClkGenerator:BaudClkGenerator_Rx" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_rx.vhd Line: 101
+Info (12128): Elaborating entity "ShiftRegister" for hierarchy "UART_rx:UART_Receiver|ShiftRegister:ShiftRegister_Rx" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/UART_rx.vhd Line: 120
+Info (12128): Elaborating entity "pwm" for hierarchy "pwm:inst_pwm" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 213
+Info (12128): Elaborating entity "dht_sensor" for hierarchy "dht_sensor:sensor" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 216
+Info (12128): Elaborating entity "sync_11" for hierarchy "dht_sensor:sensor|sync_11:do_sync" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/dht_sensor.vhd Line: 64
+Info (12128): Elaborating entity "fallingedge_detector" for hierarchy "dht_sensor:sensor|fallingedge_detector:falling" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/dht_sensor.vhd Line: 66
+Info (12128): Elaborating entity "risingedge_detector" for hierarchy "dht_sensor:sensor|risingedge_detector:rising" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/dht_sensor.vhd Line: 68
+Info (12128): Elaborating entity "seven_seg" for hierarchy "seven_seg:measured_temp_hex" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 218
+Info (12128): Elaborating entity "HCSR04_sensor_interface" for hierarchy "HCSR04_sensor_interface:inst_HCSR04_sensor_interface" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 220
+Info (12128): Elaborating entity "counter" for hierarchy "HCSR04_sensor_interface:inst_HCSR04_sensor_interface|counter:inst_counter" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/HCSR04_sensor_interface.vhd Line: 121
+Info (12128): Elaborating entity "trigger_generator" for hierarchy "HCSR04_sensor_interface:inst_HCSR04_sensor_interface|trigger_generator:inst_trigger_generator" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/HCSR04_sensor_interface.vhd Line: 134
+Info (12128): Elaborating entity "measurement_cal" for hierarchy "HCSR04_sensor_interface:inst_HCSR04_sensor_interface|measurement_cal:inst_measurement_cal" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/HCSR04_sensor_interface.vhd Line: 144
+Info (12128): Elaborating entity "binary_to_bcd" for hierarchy "HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/HCSR04_sensor_interface.vhd Line: 158
+Info (12128): Elaborating entity "seven_seg_dispayer" for hierarchy "seven_seg_dispayer:inst_seven_seg_dispayer" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 222
+Warning (10036): Verilog HDL or VHDL warning at seven_seg_dispayer.vhd(39): object "distance_decimal1" assigned a value but never read File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/seven_seg_dispayer.vhd Line: 39
+Info (12128): Elaborating entity "buzzer" for hierarchy "buzzer:inst_buzzer" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 224
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "input" File: C:/Users/dgknd/Desktop/completed/HC06_BLUETTOTH_DHT_FINISHED/src/TopLevelModule.vhd Line: 36
+Info (21057): Implemented 780 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 41 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 726 logic cells
+    Info (21062): Implemented 4 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4919 megabytes
+    Info: Processing ended: Tue May 14 00:23:56 2024
+    Info: Elapsed time: 00:01:42
+    Info: Total CPU time (on all processors): 00:00:22
+
+

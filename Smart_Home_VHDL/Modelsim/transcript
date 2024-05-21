@@ -1,0 +1,77 @@
+# Compile of TopLevelModule.vhd was successful.
+# Compile of TopLevelModule.vhd was successful.
+# Compile of TopLevelModule.vhd was successful.
+# Compile of TopLevelModule_tb.vhd failed with 3 errors.
+# Compile of TopLevelModule_tb.vhd failed with 1 errors.
+# Compile of TopLevelModule_tb.vhd was successful with warnings.
+vsim work.toplevelmodule_tb
+# vsim work.toplevelmodule_tb 
+# Start time: 10:30:21 on Nov 29,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.toplevelmodule_tb(rtl)
+# Loading work.toplevelmodule(rtl)
+# Loading work.uart_tx(rtl)
+# Loading work.serialiser(rtl)
+# Loading work.baudclkgenerator(rtl)
+# Loading work.uart_rx(rtl)
+# Loading work.sync(rtl)
+# Loading work.shiftregister(rtl)
+add wave -position end  sim:/toplevelmodule_tb/UUT/Clk
+add wave -position end  sim:/toplevelmodule_tb/UUT/Rst
+add wave -position end  sim:/toplevelmodule_tb/UUT/rs232_rx_pin
+add wave -position end  sim:/toplevelmodule_tb/UUT/rs232_tx_pin
+add wave -position end  sim:/toplevelmodule_tb/UUT/SMVariable
+add wave -position end  sim:/toplevelmodule_tb/UUT/TxStart
+add wave -position end  sim:/toplevelmodule_tb/UUT/TxReady
+add wave -position end  sim:/toplevelmodule_tb/UUT/RxIRQ
+add wave -position end  sim:/toplevelmodule_tb/UUT/RxData
+# Can't move the Now cursor.
+run 200us
+# Compile of TopLevelModule_tb.vhd failed with 1 errors.
+# Compile of TopLevelModule_tb.vhd was successful with warnings.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.toplevelmodule_tb(rtl)
+run 1ms
+# Compile of TopLevelModule_tb.vhd was successful with warnings.
+# Compile of TopLevelModule_tb.vhd was successful with warnings.
+quit -sim
+# End time: 10:50:53 on Nov 29,2020, Elapsed time: 0:20:32
+# Errors: 0, Warnings: 3
+vsim work.toplevelmodule_tb
+# vsim work.toplevelmodule_tb 
+# Start time: 10:50:57 on Nov 29,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.toplevelmodule_tb(rtl)
+# Loading work.toplevelmodule(rtl)
+# Loading work.uart_tx(rtl)
+# Loading work.serialiser(rtl)
+# Loading work.baudclkgenerator(rtl)
+# Loading work.uart_rx(rtl)
+# Loading work.sync(rtl)
+# Loading work.shiftregister(rtl)
+add wave -position end  sim:/toplevelmodule_tb/TransmittedData
+add wave -position 0  sim:/toplevelmodule_tb/rs232_rx_pin
+add wave -position 1  sim:/toplevelmodule_tb/rs232_tx_pin
+run 1ms
+# Compile of TopLevelModule_tb.vhd was successful with warnings.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.toplevelmodule_tb(rtl)
+add wave -position end  sim:/toplevelmodule_tb/DataTransmittedToPC
+run 1ms
+# Compile of TopLevelModule_tb.vhd was successful with warnings.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.toplevelmodule_tb(rtl)
+run 10ms
+run 10ms
+run 10ms
+# End time: 16:57:28 on Nov 29,2020, Elapsed time: 6:06:31
+# Errors: 0, Warnings: 1

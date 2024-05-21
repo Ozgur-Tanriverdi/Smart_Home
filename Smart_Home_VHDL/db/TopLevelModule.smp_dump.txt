@@ -1,0 +1,34 @@
+
+State Machine - |TopLevelModule|seven_seg_dispayer:inst_seven_seg_dispayer|state
+Name state.display_seven_seg state.handle_in_data state.idle 
+state.idle 0 0 0 
+state.handle_in_data 0 1 1 
+state.display_seven_seg 1 0 1 
+
+State Machine - |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|binary_to_bcd:inst_binary_to_bcd|state
+Name state.counting state.copying_info state.idle 
+state.idle 0 0 0 
+state.copying_info 0 1 1 
+state.counting 1 0 1 
+
+State Machine - |TopLevelModule|HCSR04_sensor_interface:inst_HCSR04_sensor_interface|counter:inst_counter|state
+Name state.sending_info state.counting state.idle 
+state.idle 0 0 0 
+state.counting 0 1 1 
+state.sending_info 1 0 1 
+
+State Machine - |TopLevelModule|dht_sensor:sensor|state
+Name state.S6 state.S5 state.S4 state.S3 state.S2 state.S1 state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.S1 0 0 0 0 0 1 1 
+state.S2 0 0 0 0 1 0 1 
+state.S3 0 0 0 1 0 0 1 
+state.S4 0 0 1 0 0 0 1 
+state.S5 0 1 0 0 0 0 1 
+state.S6 1 0 0 0 0 0 1 
+
+State Machine - |TopLevelModule|UART_rx:UART_Receiver|SMStateVariable
+Name SMStateVariable.ASSERT_IRQ SMStateVariable.COLLECT_RS232_DATA SMStateVariable.IDLE 
+SMStateVariable.IDLE 0 0 0 
+SMStateVariable.COLLECT_RS232_DATA 0 1 1 
+SMStateVariable.ASSERT_IRQ 1 0 1 

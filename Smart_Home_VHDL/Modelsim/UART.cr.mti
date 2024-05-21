@@ -1,0 +1,162 @@
+C:/My_Designs/UART/test_benches/Sync_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/test_benches/Sync_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Sync_tb
+-- Compiling architecture rtl of Sync_tb
+** Warning: C:/My_Designs/UART/test_benches/Sync_tb.vhd(31): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/Sync_tb.vhd(51): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/Sync_tb.vhd(53): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/Sync_tb.vhd(54): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/My_Designs/UART/test_benches/BaudClkGenerator_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/test_benches/BaudClkGenerator_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity BaudClkGenerator_tb
+-- Compiling architecture rtl of BaudClkGenerator_tb
+** Warning: C:/My_Designs/UART/test_benches/BaudClkGenerator_tb.vhd(35): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/BaudClkGenerator_tb.vhd(59): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/My_Designs/UART/src/Serialiser.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/src/Serialiser.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Serialiser
+-- Compiling architecture rtl of Serialiser
+
+} {} {}} C:/My_Designs/UART/src/ShiftRegister.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/src/ShiftRegister.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ShiftRegister
+-- Compiling architecture rtl of ShiftRegister
+
+} {} {}} C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity TopLevelModule_tb
+-- Compiling architecture rtl of TopLevelModule_tb
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(42): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(68): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(72): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(78): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(94): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(99): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(104): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(110): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(112): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/TopLevelModule_tb.vhd(117): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/My_Designs/UART/src/BaudClkGenerator.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/My_Designs/UART/src/BaudClkGenerator.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity BaudClkGenerator
+-- Compiling architecture rtl of BaudClkGenerator
+
+} {} {}} C:/My_Designs/UART/src/UART_rx.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/src/UART_rx.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity UART_rx
+-- Compiling architecture rtl of UART_rx
+
+} {} {}} C:/My_Designs/UART/src/Sync.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/src/Sync.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Sync
+-- Compiling architecture rtl of Sync
+
+} {} {}} C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ShiftRegister_tb
+-- Compiling architecture rtl of ShiftRegister_tb
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(36): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(59): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(61): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(66): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(71): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(75): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(80): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(85): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(90): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(93): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/ShiftRegister_tb.vhd(98): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/My_Designs/UART/src/UART_tx.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/src/UART_tx.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity UART_tx
+-- Compiling architecture rtl of UART_tx
+
+} {} {}} C:/My_Designs/UART/src/TopLevelModule.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/src/TopLevelModule.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity TopLevelModule
+-- Compiling architecture rtl of TopLevelModule
+
+} {} {}} C:/My_Designs/UART/test_benches/UART_rx_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/test_benches/UART_rx_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity UART_rx_tb
+-- Compiling architecture rtl of UART_rx_tb
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(39): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(64): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(66): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(70): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(74): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(76): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(78): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(80): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(82): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(84): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(86): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(88): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(92): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_rx_tb.vhd(94): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/My_Designs/UART/test_benches/UART_tx_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/test_benches/UART_tx_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity UART_tx_tb
+-- Compiling architecture rtl of UART_tx_tb
+** Warning: C:/My_Designs/UART/test_benches/UART_tx_tb.vhd(44): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_tx_tb.vhd(69): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/UART_tx_tb.vhd(71): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/My_Designs/UART/test_benches/Serialiser_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/My_Designs/UART/test_benches/Serialiser_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Serialiser_tb
+-- Compiling architecture rtl of Serialiser_tb
+** Warning: C:/My_Designs/UART/test_benches/Serialiser_tb.vhd(42): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/Serialiser_tb.vhd(68): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/Serialiser_tb.vhd(70): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/My_Designs/UART/test_benches/Serialiser_tb.vhd(81): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}}

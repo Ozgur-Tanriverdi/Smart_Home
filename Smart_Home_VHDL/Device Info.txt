@@ -1,0 +1,7 @@
+Device = EP4CE6E22C8
+
+Clk          -> Pin 23
+Rst          -> Pin 25
+
+rs232_tx     -> Pin 114
+rs232_rx     -> Pin 115
